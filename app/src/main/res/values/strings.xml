@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">LoginRegistration</string>
+    <string name="todo" />
+    <string name="login" />
+    <string name="confirm_password" />
+    <string name="enter_password" />
+    <string name="enter_username" />
+    <string name="logbutton">Login</string>
+    <string name="username">Enter Username</string>
+    <string name="password">Enter Password</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="register_here">Register Here.</string>
+    <string name="enter_name_first_last" />
+    <string name="enter_phone_number" />
+    <string name="enter_a_security_question" />
+    <string name="enter_security_answer" />
+    <string name="register" />
+    <string name="nameFirstLast">Enter Name (First,Last)</string>
+    <string name="phoneNumber">Enter Phone Number</string>
+    <string name="enterUsername">Enter Username</string>
+    <string name="enterPassword">Enter Password</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="enterSecurityQ">Enter a Security Question</string>
+    <string name="enterSecurityA">Enter Security Answer</string>
+</resources>
