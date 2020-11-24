@@ -19,7 +19,9 @@
     <string name="phoneNumber">Enter Phone Number</string>
     <string name="enterUsername">Enter Username</string>
     <string name="enterPassword">Enter Password</string>
-    <string name="confirmPassword">Confirm Password</string>
     <string name="enterSecurityQ">Enter a Security Question</string>
     <string name="enterSecurityA">Enter Security Answer</string>
+    <string name="registerButton">Register</string>
+    <string name="loginregister">Login</string>
+    <string name="already_registered">Already Registered?</string>
 </resources>
