@@ -44,7 +44,8 @@ public class LoginActivity extends AppCompatActivity {
                 String pass = mTextPassword.getText().toString().trim();
                 Boolean res = db.checkUserExists(user, pass);
                 if (res == true) {
-                    Toast.makeText(LoginActivity.this, "Successfully Logged In", Toast.LENGTH_SHORT).show();
+                    Intent HomePage = new Intent(LoginActivity.this,HomeActivity.class);
+                    startActivity(HomePage);
                 }
                 else {
                     Toast.makeText(LoginActivity.this, "Login Error", Toast.LENGTH_SHORT).show();
