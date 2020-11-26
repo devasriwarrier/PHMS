@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME="dUserInfo.db";
+    public static final String DATABASE_NAME="userInfo.db";
     public static final String TABLE_NAME="registeruser";
     public static final String COL_1 = "ID"; //all columns in DB
     public static final String COL_2 = "Username";
