@@ -8,14 +8,14 @@
     tools:context=".RegisterActivity">
 
     <EditText
-        android:id="@+id/name"
+        android:id="@+id/edittext_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints=""
         android:hint="@string/nameFirstLast"
         android:inputType="textPersonName"
         android:layout_marginTop="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/address"
+        app:layout_constraintBottom_toTopOf="@+id/edittext_address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,59 +23,59 @@
         app:layout_constraintVertical_bias="0.12" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/edittext_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/name"
+        android:layout_below="@+id/edittext_name"
         android:hint="Enter E-mail address"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/address"
+        app:layout_constraintBottom_toTopOf="@+id/edittext_address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_name"
         tools:ignore="HardcodedText"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/address"
+        android:id="@+id/edittext_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/email"
+        android:layout_below="@+id/edittext_email"
 
         android:hint="Enter Home Address"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/phone"
+        app:layout_constraintBottom_toTopOf="@+id/edittext_phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_email"
         tools:ignore="HardcodedText"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/phone"
+        android:id="@+id/edittext_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/address"
+        android:layout_below="@+id/edittext_address"
         android:hint="@string/phoneNumber"
         android:inputType="phone"
         app:layout_constraintBottom_toTopOf="@+id/edittext_username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/address"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_address"
         android:autofillHints="" />
 
     <EditText
         android:id="@+id/edittext_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/phone"
+        android:layout_below="@+id/edittext_phone"
         android:hint="@string/enterUsername"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/edittext_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_phone"
         android:autofillHints="" />
 
     <EditText
@@ -98,30 +98,30 @@
         android:layout_below="@+id/edittext_password"
         android:hint="@string/confirmPassword"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/securityQuestion"
+        app:layout_constraintBottom_toTopOf="@+id/edittext_securityQuestion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edittext_password"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/securityQuestion"
+        android:id="@+id/edittext_securityQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edittext_rePassword"
         android:hint="@string/enterSecurityQ"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/securityAnswer"
+        app:layout_constraintBottom_toTopOf="@+id/edittext_securityAnswer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edittext_rePassword"
         android:importantForAutofill="no" />
 
     <EditText
-        android:id="@+id/securityAnswer"
+        android:id="@+id/edittext_securityAnswer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/securityQuestion"
+        android:layout_below="@+id/edittext_securityQuestion"
         android:layout_marginBottom="30dp"
         android:hint="@string/enterSecurityA"
         android:importantForAutofill="no"
@@ -129,7 +129,7 @@
         app:layout_constraintBottom_toTopOf="@+id/buttonRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/securityQuestion" />
+        app:layout_constraintTop_toBottomOf="@+id/edittext_securityQuestion" />
 
     <Button
         android:id="@+id/buttonRegister"
@@ -147,7 +147,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.166"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/securityAnswer" />
+        app:layout_constraintTop_toBottomOf="@+id/edittext_securityAnswer" />
 
     <TextView
         android:id="@+id/alreadyRegistered"
