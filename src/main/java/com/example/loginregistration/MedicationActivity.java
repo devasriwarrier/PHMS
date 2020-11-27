@@ -2,9 +2,15 @@ package com.example.loginregistration;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+import java.security.Key;
 
 public class MedicationActivity extends AppCompatActivity {
 
@@ -15,6 +21,7 @@ public class MedicationActivity extends AppCompatActivity {
     EditText mTextHowLong;
     Button mButtonSubmit;
     Button mButtonEdit;
+    ImageView mImageViewBack;
 
 
     @Override
@@ -29,6 +36,31 @@ public class MedicationActivity extends AppCompatActivity {
         mTextHowLong = (EditText)findViewById(R.id.editText_HowLong);
         mButtonSubmit = (Button)findViewById(R.id.button_SubmitMedication);
         mButtonEdit = (Button)findViewById(R.id.button_EditMedications);
+        mImageViewBack = (ImageView)findViewById(R.id.imageView_backButtonMedication);
+        mImageViewBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent MedToHomeIntent = new Intent(MedicationActivity.this, HomeActivity.class);
+                startActivity(MedToHomeIntent);
+            }
+        });
 
-    }
+        mButtonSubmit.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                String med = mTextMedication.getText().toString().trim();
+                String timeToTake = mTextTime.getText().toString().trim();
+                String dosage = mTextDosage.getText().toString().trim();
+                String howLong = mTextHowLong.getText().toString().trim();
+
+                boolean val = db.addMedication(med, timeToTake, dosage, howLong);
+                if (val) {
+                    Toast.makeText(MedicationActivity.this, "Medication Information Saved", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MedicationActivity.this, "Error Inputting Data. Try Again.", Toast.LENGTH_SHORT).show();
+                }
+            }
+            });
+
+        }
 }

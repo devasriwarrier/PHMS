@@ -25,7 +25,23 @@
     <string name="loginregister">Login</string>
     <string name="already_registered">Already Registered?</string>
     <string name="title_activity_home">ScrollingActivity</string>
+    <string name="edit_name">Full name?</string>
+    <string name="edit_gender">Gender?</string>
+    <string name="edit_weight">Weight in pounds? (###)</string>
+    <string name="edit_height">Height in inches? (##)</string>
+    <string name="edit_age">Age in years? (##)</string>
+    <string name="edit_docName">Doctor name?</string>
+    <string name="edit_docEmail">Doctor email?</string>
+    <string name="edit_pharmName">Pharmacist name?</string>
+    <string name="edit_pharmEmail">Pharmacist email?</string>
+    <string name="edit_NofKin">Next of Kin name? (First Last)</string>
+    <string name="edit_NofKinEmail">Next of Kin email?</string>
+    <string name="edit_visitDate">Doctor visit date?</string>
+    <string name="PersonalInfo_button">Save</string>
+    <string name="PersonalInfoUpdate_button">Update</string>
+    <string name="edit_username">Username?</string>
     <string name="large_text">
+
         "Material is the metaphor.\n\n"
 
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
@@ -125,4 +141,10 @@
     <string name="time_of_day_to_take">Time of day to take</string>
     <string name="how_much_to_take">How much to take</string>
     <string name="how_many_days">How many days</string>
+    <string name="medicationHome">Medication</string>
+    <string name="medicationTextHome">Medication</string>
+    <string name="monitoring_systemTextHome">Monitoring System</string>
+    <string name="settingsHome">Settings</string>
+    <string name="monitoring_systemHome">Monitoring System</string>
+    <string name="backbutton">BackButton</string>
 </resources>

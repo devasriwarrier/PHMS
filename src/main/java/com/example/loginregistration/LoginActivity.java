@@ -3,6 +3,7 @@ package com.example.loginregistration;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 public class LoginActivity extends AppCompatActivity {
 
     EditText mTextUsername;
@@ -18,6 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     Button mButtonLogin;
     TextView mTextViewRegister;
     DatabaseHelper db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +46,12 @@ public class LoginActivity extends AppCompatActivity {
                 String user = mTextUsername.getText().toString().trim();
                 String pass = mTextPassword.getText().toString().trim();
                 Boolean res = db.checkUserExists(user, pass);
-                if (res == true) {
+                if (res) {
                     Intent HomePage = new Intent(LoginActivity.this,HomeActivity.class);
+                    DatabaseHelper.currentUser = user;
+                    //System.out.println("User: " + DatabaseHelper.currentUser);
                     startActivity(HomePage);
+
                 }
                 else {
                     Toast.makeText(LoginActivity.this, "Login Error", Toast.LENGTH_SHORT).show();

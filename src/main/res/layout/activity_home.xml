@@ -16,20 +16,11 @@
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:contentScrim="?attr/colorPrimary"
+            app:contentScrim="@color/teal_700"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:layout_scrollInterpolator="@android:anim/decelerate_interpolator"
 
             app:toolbarId="@+id/toolbar">
-
-            <ImageView
-                android:id="@+id/app_bar_image"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-
-                android:src="@android:drawable/sym_def_app_icon"
-                app:layout_collapseMode="parallax" />
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -53,7 +44,15 @@
                 android:id="@+id/imageButton_Medicine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/medicationHome"
                 app:srcCompat="@drawable/medicine" />
+
+            <ImageButton
+                android:id="@+id/imageButton_MonitoringSystem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/monitoring_systemHome"
+                app:srcCompat="@drawable/monitoring" />
 
         </TableRow>
 
@@ -62,10 +61,20 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textView_Medicine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/medication" />
+                android:gravity="center"
+                android:text="@string/medicationTextHome"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textView_MonitoringSystem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/monitoring_systemTextHome"
+                android:textStyle="bold"/>
         </TableRow>
 
         <TableRow
@@ -76,6 +85,7 @@
                 android:id="@+id/imageButton_Settings"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:contentDescription="@string/settingsHome"
                 app:srcCompat="@android:drawable/ic_menu_manage" />
         </TableRow>
 
@@ -87,7 +97,9 @@
                 android:id="@+id/textView_Settings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/action_settings" />
+                android:gravity="center"
+                android:text="@string/action_settings"
+                android:textStyle="bold"/>
         </TableRow>
     </TableLayout>
 
