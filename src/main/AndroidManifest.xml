@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginRegistration">
-        <activity android:name=".MedicationActivity"></activity>
+        <activity
+            android:name=".ViewMedicationActivity"
+            android:label="@string/title_activity_view_medication"
+            android:theme="@style/Theme.LoginRegistration.NoActionBar"></activity>
+        <activity android:name=".MedicationActivity" />
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"

@@ -10,8 +10,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import java.security.Key;
-
 public class MedicationActivity extends AppCompatActivity {
 
     DatabaseHelper db;
@@ -20,7 +18,7 @@ public class MedicationActivity extends AppCompatActivity {
     EditText mTextDosage;
     EditText mTextHowLong;
     Button mButtonSubmit;
-    Button mButtonEdit;
+    Button mButtonView;
     ImageView mImageViewBack;
 
 
@@ -35,7 +33,7 @@ public class MedicationActivity extends AppCompatActivity {
         mTextDosage = (EditText)findViewById(R.id.editText_Dosage);
         mTextHowLong = (EditText)findViewById(R.id.editText_HowLong);
         mButtonSubmit = (Button)findViewById(R.id.button_SubmitMedication);
-        mButtonEdit = (Button)findViewById(R.id.button_EditMedications);
+        mButtonView = (Button)findViewById(R.id.button_ViewMedications);
         mImageViewBack = (ImageView)findViewById(R.id.imageView_backButtonMedication);
         mImageViewBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,7 +42,14 @@ public class MedicationActivity extends AppCompatActivity {
                 startActivity(MedToHomeIntent);
             }
         });
+        mButtonView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent viewMedsIntent = new Intent(MedicationActivity.this, ViewMedicationActivity.class);
+                startActivity(viewMedsIntent);
+            }
 
+        });
         mButtonSubmit.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {

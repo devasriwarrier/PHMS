@@ -25,6 +25,7 @@
     <string name="loginregister">Login</string>
     <string name="already_registered">Already Registered?</string>
     <string name="title_activity_home">ScrollingActivity</string>
+    //Dev
     <string name="edit_name">Full name?</string>
     <string name="edit_gender">Gender?</string>
     <string name="edit_weight">Weight in pounds? (###)</string>
@@ -147,4 +148,7 @@
     <string name="settingsHome">Settings</string>
     <string name="monitoring_systemHome">Monitoring System</string>
     <string name="backbutton">BackButton</string>
+    <string name="title_activity_view_medication">ScrollingActivity</string>
+    <string name="addmedicationbutton">addMedicationBUtton</string>
+    <string name="view">View</string>
 </resources>

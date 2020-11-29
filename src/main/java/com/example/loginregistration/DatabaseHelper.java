@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -111,28 +112,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         long res = db.insert(TABLE_NAME1, null, contentValues);
         db.close();
-        viewMedicine();
+        viewMedication();
         if (res == -1)
             return false;
         else
             return true;
     }
 
-    public void viewMedicine(){
-        SQLiteDatabase read = getReadableDatabase();
-        String[] columns = {COL_11, COL_12, COL_13, COL_14};
+    public Cursor viewMedication(){
+        SQLiteDatabase read = this.getReadableDatabase();
+        String[] columns = {COL_10,COL_11, COL_12, COL_13, COL_14};
         String selection = COL_15 + "=?";
         String[] loggedIn = {String.valueOf(currentUserID)};
+
         Cursor cursor = read.query(TABLE_NAME1, columns, selection, loggedIn,null,null,null);
-        cursor.moveToFirst();
-        try {
-            while (cursor.moveToNext()) {
-                for(int i = 0; i < 4; i++)
-                System.out.println(cursor.getString(i));
-            }
-        } finally {
-            cursor.close();
-        }
+
+        return cursor;
     }
     //SELECT * FROM medication WHERE User_ID=currentUser;
     //SELECT * FROM medicine WHERE User_ID=currentUserID;
