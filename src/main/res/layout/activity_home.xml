@@ -54,6 +54,13 @@
                 android:contentDescription="@string/monitoring_systemHome"
                 app:srcCompat="@drawable/monitoring" />
 
+            <ImageButton
+                android:id="@+id/imageButton_PersonalInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/personalinfobutton"
+                app:srcCompat="@drawable/personal_info" />
+
         </TableRow>
 
         <TableRow
@@ -74,6 +81,14 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/monitoring_systemTextHome"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textView_personalInformation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/personal_information"
                 android:textStyle="bold"/>
         </TableRow>
 

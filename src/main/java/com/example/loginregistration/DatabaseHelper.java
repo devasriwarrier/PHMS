@@ -33,6 +33,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_13 = "How_Much";
     public static final String COL_14 = "How_Long";
     public static final String COL_15 = "User_ID";
+    public static final String TABLE_NAME_PERSONAL_INFO = "personalInfo";
+    public static final String COL_16 = "ID"; //all columns in DB
+    public static final String COL_17 = "USERNAME";
+    public static final String COL_18 = "NAME";
+    public static final String COL_19 = "WEIGHT"; //TODO: Devasri remember to handle this in Monitoring System
+    public static final String COL_20 = "HEIGHT";
+    public static final String COL_21 = "AGE";
+    public static final String COL_22 = "GENDER";
+    public static final String COL_23 = "DOCTOR_NAME"; //TODO: Devasri remember to handle this in Monitoring System
+    public static final String COL_24 = "DOCTOR_EMAIL"; //TODO: Devasri remember to handle this in Monitoring System
+    public static final String COL_25 = "PHARM_NAME";
+    public static final String COL_26 = "PHARM_EMAIL";
+    public static final String COL_27 = "KIN_NAME";
+    public static final String COL_28 = "KIN_EMAIL";
+    public static final String COL_29 = "VISIT_DATE";
+    public static final String COL_30 = "User_ID";
     public static String currentUser;
     public static int currentUserID;
     //TODO: Might need to add variables for "diet"
@@ -45,12 +61,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE registeruser (ID INTEGER PRIMARY KEY AUTOINCREMENT, Username TEXT UNIQUE, Password TEXT, Name TEXT, Email TEXT, Address TEXT, Phone TEXT, Security_Question TEXT, Security_Answer TEXT)");
         sqLiteDatabase.execSQL("CREATE TABLE medication (Medication_ID INTEGER PRIMARY KEY AUTOINCREMENT, Medication_Name TEXT, Time_To_Take TEXT, How_Much TEXT, How_Long TEXT, User_ID INTEGER, FOREIGN KEY(User_ID) REFERENCES registeruser(ID) )");
+        sqLiteDatabase.execSQL("CREATE TABLE personalInfo (ID INTEGER PRIMARY KEY AUTOINCREMENT,USERNAME TEXT, NAME TEXT, WEIGHT INT, HEIGHT INT, AGE INT, GENDER TEXT, DOCTOR_NAME TEXT, DOCTOR_EMAIL TEXT, PHARM_NAME TEXT, PHARM_EMAIL TEXT, KIN_NAME TEXT, KIN_EMAIL TEXT, VISIT_DATE TEXT, FOREIGN KEY(USER_ID) REFERENCES registeruser(ID))");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME1);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_PERSONAL_INFO);
         onCreate(sqLiteDatabase);
 
     }
@@ -132,4 +150,55 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //SELECT * FROM medication WHERE User_ID=currentUser;
     //SELECT * FROM medicine WHERE User_ID=currentUserID;
 
+
+    public boolean addPersonalInfo(String username, String name, String weight, String height, String age, String gender, String docname, String docemail, String pharmname, String pharmemail, String kinname, String kinemail, String visitdate){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("USERNAME", username);
+        contentValues.put("NAME", name);
+        contentValues.put("WEIGHT", weight);
+        contentValues.put("HEIGHT", height);
+        contentValues.put("AGE", age);
+        contentValues.put("GENDER", gender);
+        contentValues.put("DOCTOR_NAME", docname);
+        contentValues.put("DOCTOR_EMAIL", docemail);
+        contentValues.put("PHARM_NAME", pharmname);
+        contentValues.put("PHARM_EMAIL", pharmemail);
+        contentValues.put("KIN_NAME", kinname);
+        contentValues.put("KIN_EMAIL", kinemail);
+        contentValues.put("VISIT_DATE", visitdate);
+        long result = db.insert("personalInfo", null, contentValues);
+        if (result == -1)
+            return false;
+        else
+            return true;
+        //db.close();
+    }
+    public Cursor viewPersonalInfo() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("select * from " + TABLE_NAME_PERSONAL_INFO, null);
+        return result;
+    }
+    public boolean updatePersonalInfo(String username, String name, String weight, String height, String age, String gender, String docname, String docemail, String pharmname, String pharmemail, String kinname, String kinemail, String visitdate) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        //contentValues.put("ID", id);
+        contentValues.put("USERNAME", username);
+        contentValues.put("NAME", name);
+        contentValues.put("WEIGHT", weight);
+        contentValues.put("HEIGHT", height);
+        contentValues.put("AGE", age);
+        contentValues.put("GENDER", gender);
+        contentValues.put("DOCTOR_NAME", docname);
+        contentValues.put("DOCTOR_EMAIL", docemail);
+        contentValues.put("PHARM_NAME", pharmname);
+        contentValues.put("PHARM_EMAIL", pharmemail);
+        contentValues.put("KIN_NAME", kinname);
+        contentValues.put("KIN_EMAIL", kinemail);
+        contentValues.put("VISIT_DATE", visitdate);
+        db.update(TABLE_NAME_PERSONAL_INFO, contentValues, "USERNAME = ?", new String[] {username} );
+        return true;
+    }
 }

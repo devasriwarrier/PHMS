@@ -26,7 +26,8 @@ public class ViewMedicationActivity extends AppCompatActivity {
     ArrayList<String> listItem;
     ArrayAdapter adapter;
     ListView medicationList;
-    String totalMeds[], medName[], medTime[], medDosage[], medLength[];
+    String medName[], medTime[], medDosage[], medLength[];
+    int totalMeds[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +65,9 @@ public class ViewMedicationActivity extends AppCompatActivity {
 
     private void viewMedication() {
         Cursor cursor = db.viewMedication();
-        totalMeds = new String[cursor.getCount()];
+
+        totalMeds = new int[Integer.parseInt(cursor.getString(0))];
+        System.out.println(totalMeds.length);
         medName = new String[cursor.getCount()];
         medTime = new String[cursor.getCount()];
         medDosage = new String[cursor.getCount()];
@@ -85,7 +88,7 @@ public class ViewMedicationActivity extends AppCompatActivity {
                 Toast.makeText(this,"Medication: " + medName[i] + "\n" + "Time to Take: " + medTime[i] + "\n" + "Dosage: " +  medDosage[i] + "\n" + "How Long: " + medLength[i] + "\n", Toast.LENGTH_LONG).show();
                 cursor.moveToNext();
             }
-            StringBuffer buffer = new StringBuffer();
+            /*StringBuffer buffer = new StringBuffer();
             while (cursor.moveToNext()){
                 buffer.append("Medication Name: " + cursor.getString(1) + "\n");
                 buffer.append("Time to Take: " + cursor.getString(2) + "\n");
@@ -93,8 +96,8 @@ public class ViewMedicationActivity extends AppCompatActivity {
                buffer.append("How Long: " + cursor.getString(4) + "\n");
 
                 //listItem.add(cursor.getString(1));
-            }
-            Toast.makeText(getApplicationContext(), "All Medication: \n" + buffer.toString(), Toast.LENGTH_LONG).show();
+            } */
+            //Toast.makeText(getApplicationContext(), "All Medication: \n" + buffer.toString(), Toast.LENGTH_LONG).show();
             adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, listItem);
             medicationList.setAdapter(adapter);
         }

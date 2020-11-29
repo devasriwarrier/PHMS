@@ -18,6 +18,7 @@ public class HomeActivity extends AppCompatActivity {
 
     ImageButton mButtonMedication;
     ImageButton mButtonSettings;
+    ImageButton mButtonPersonalInfo;
 
 
     @Override
@@ -25,6 +26,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        mButtonPersonalInfo = (ImageButton) findViewById(R.id.imageButton_PersonalInfo);
         mButtonMedication = (ImageButton) findViewById(R.id.imageButton_Medicine);
         mButtonSettings = (ImageButton) findViewById(R.id.imageButton_Settings);
         mButtonMedication.setOnClickListener(new View.OnClickListener(){
@@ -35,6 +37,14 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        mButtonPersonalInfo.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent personalInfoIntent = new Intent(HomeActivity.this, PersonalInfoActivity.class);
+                startActivity(personalInfoIntent);
+            }
+
+        });
 
 
 

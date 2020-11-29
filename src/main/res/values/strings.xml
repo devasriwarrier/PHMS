@@ -40,6 +40,7 @@
     <string name="edit_visitDate">Doctor visit date?</string>
     <string name="PersonalInfo_button">Save</string>
     <string name="PersonalInfoUpdate_button">Update</string>
+    <string name="ValidatePersonalInfo_button">View</string>
     <string name="edit_username">Username?</string>
     <string name="large_text">
 
@@ -151,4 +152,7 @@
     <string name="title_activity_view_medication">ScrollingActivity</string>
     <string name="addmedicationbutton">addMedicationBUtton</string>
     <string name="view">View</string>
+    <string name="personalinfobutton">personalInfoButton</string>
+    <string name="personal_information">Personal Information</string>
+    <string name="m_health">m_health</string>
 </resources>
