@@ -14,8 +14,6 @@ import android.widget.EditText;
 
 public class PersonalInfoActivity extends AppCompatActivity {
 
-    EditText mTextUserName;
-    EditText mTextName;
     EditText mTextGender;
     EditText mTextWeight;
     EditText mTextHeight;
@@ -38,8 +36,7 @@ public class PersonalInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_personal_info);
 
         myDb = new DatabaseHelper(this);
-        mTextUserName = (EditText)findViewById(R.id.mTextUserName);
-        mTextName = (EditText)findViewById(R.id.mTextName);
+
         mTextWeight = (EditText)findViewById(R.id.mTextWeight);
         mTextHeight = (EditText)findViewById(R.id.mTextHeight);
         mTextAge = (EditText)findViewById(R.id.mTextAge);
@@ -64,8 +61,8 @@ public class PersonalInfoActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        boolean isUpdate = myDb.updatePersonalInfo(mTextUserName.getText().toString(),
-                                mTextName.getText().toString(),
+                        boolean isUpdate = myDb.updatePersonalInfo(
+
                                 mTextWeight.getText().toString(),
                                 mTextHeight.getText().toString(),
                                 mTextAge.getText().toString(),
@@ -103,8 +100,7 @@ public class PersonalInfoActivity extends AppCompatActivity {
                         StringBuffer buffer = new StringBuffer();
                         while(result.moveToNext()) {
                             //buffer.append("ID: "+ result.getString(0)+"\n");
-                            buffer.append("Username: "+ result.getString(1)+"\n");
-                            buffer.append("Name: "+ result.getString(2)+"\n");
+
                             buffer.append("Weight: "+ result.getString(3)+"\n");
                             buffer.append("Height: "+ result.getString(4)+"\n");
                             buffer.append("Age: "+ result.getString(5)+"\n");
@@ -136,8 +132,7 @@ public class PersonalInfoActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        boolean isInserted = myDb.addPersonalInfo(mTextUserName.getText().toString(),
-                                mTextName.getText().toString(),
+                        boolean isInserted = myDb.addPersonalInfo(
                                 mTextWeight.getText().toString(),
                                 mTextHeight.getText().toString(),
                                 mTextAge.getText().toString(),

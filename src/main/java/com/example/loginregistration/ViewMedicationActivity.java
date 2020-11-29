@@ -26,8 +26,8 @@ public class ViewMedicationActivity extends AppCompatActivity {
     ArrayList<String> listItem;
     ArrayAdapter adapter;
     ListView medicationList;
-    String medName[], medTime[], medDosage[], medLength[];
-    int totalMeds[];
+    String totalMeds[], medName[], medTime[], medDosage[], medLength[];
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +66,7 @@ public class ViewMedicationActivity extends AppCompatActivity {
     private void viewMedication() {
         Cursor cursor = db.viewMedication();
 
-        totalMeds = new int[Integer.parseInt(cursor.getString(0))];
-        System.out.println(totalMeds.length);
+        totalMeds = new String[cursor.getCount()];
         medName = new String[cursor.getCount()];
         medTime = new String[cursor.getCount()];
         medDosage = new String[cursor.getCount()];

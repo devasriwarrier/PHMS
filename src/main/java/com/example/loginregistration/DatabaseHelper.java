@@ -61,7 +61,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE registeruser (ID INTEGER PRIMARY KEY AUTOINCREMENT, Username TEXT UNIQUE, Password TEXT, Name TEXT, Email TEXT, Address TEXT, Phone TEXT, Security_Question TEXT, Security_Answer TEXT)");
         sqLiteDatabase.execSQL("CREATE TABLE medication (Medication_ID INTEGER PRIMARY KEY AUTOINCREMENT, Medication_Name TEXT, Time_To_Take TEXT, How_Much TEXT, How_Long TEXT, User_ID INTEGER, FOREIGN KEY(User_ID) REFERENCES registeruser(ID) )");
-        sqLiteDatabase.execSQL("CREATE TABLE personalInfo (ID INTEGER PRIMARY KEY AUTOINCREMENT,USERNAME TEXT, NAME TEXT, WEIGHT INT, HEIGHT INT, AGE INT, GENDER TEXT, DOCTOR_NAME TEXT, DOCTOR_EMAIL TEXT, PHARM_NAME TEXT, PHARM_EMAIL TEXT, KIN_NAME TEXT, KIN_EMAIL TEXT, VISIT_DATE TEXT, FOREIGN KEY(USER_ID) REFERENCES registeruser(ID))");
+        sqLiteDatabase.execSQL("CREATE TABLE personalInfo (ID INTEGER PRIMARY KEY AUTOINCREMENT, WEIGHT INT, HEIGHT INT, AGE INT, GENDER TEXT, DOCTOR_NAME TEXT, DOCTOR_EMAIL TEXT, PHARM_NAME TEXT, PHARM_EMAIL TEXT, KIN_NAME TEXT, KIN_EMAIL TEXT, VISIT_DATE TEXT, User_ID INTEGER, FOREIGN KEY(USER_ID) REFERENCES registeruser(ID))");
     }
 
     @Override
@@ -130,7 +130,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         long res = db.insert(TABLE_NAME1, null, contentValues);
         db.close();
-        viewMedication();
+        //viewMedication();
         if (res == -1)
             return false;
         else
@@ -151,12 +151,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //SELECT * FROM medicine WHERE User_ID=currentUserID;
 
 
-    public boolean addPersonalInfo(String username, String name, String weight, String height, String age, String gender, String docname, String docemail, String pharmname, String pharmemail, String kinname, String kinemail, String visitdate){
+    public boolean addPersonalInfo(String weight, String height, String age, String gender, String docname, String docemail, String pharmname, String pharmemail, String kinname, String kinemail, String visitdate){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        SQLiteDatabase read = getReadableDatabase();
+        String[] columns = {COL_1};
+        String selection = COL_2 + "=?";
+        String[] loggedIn = {currentUser};
+        //int id = getIntent().getIntExtra();
+        //Log.d("User:",loggedIn[0]);
+        Cursor cursor = read.query(TABLE_NAME,columns,selection,loggedIn,null,null,null);
 
-        contentValues.put("USERNAME", username);
-        contentValues.put("NAME", name);
+        cursor.moveToFirst();
+        currentUserID = cursor.getInt(0);
+
+
         contentValues.put("WEIGHT", weight);
         contentValues.put("HEIGHT", height);
         contentValues.put("AGE", age);
@@ -168,6 +177,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("KIN_NAME", kinname);
         contentValues.put("KIN_EMAIL", kinemail);
         contentValues.put("VISIT_DATE", visitdate);
+        contentValues.put("User_ID", currentUserID);
+
         long result = db.insert("personalInfo", null, contentValues);
         if (result == -1)
             return false;
@@ -180,13 +191,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor result = db.rawQuery("select * from " + TABLE_NAME_PERSONAL_INFO, null);
         return result;
     }
-    public boolean updatePersonalInfo(String username, String name, String weight, String height, String age, String gender, String docname, String docemail, String pharmname, String pharmemail, String kinname, String kinemail, String visitdate) {
+    public boolean updatePersonalInfo(String weight, String height, String age, String gender, String docname, String docemail, String pharmname, String pharmemail, String kinname, String kinemail, String visitdate) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        SQLiteDatabase read = getReadableDatabase();
+        String[] columns = {COL_1};
+        String selection = COL_2 + "=?";
+        String[] loggedIn = {currentUser};
+        //int id = getIntent().getIntExtra();
+        //Log.d("User:",loggedIn[0]);
+        Cursor cursor = read.query(TABLE_NAME,columns,selection,loggedIn,null,null,null);
+
+        cursor.moveToFirst();
+        currentUserID = cursor.getInt(0);
 
         //contentValues.put("ID", id);
-        contentValues.put("USERNAME", username);
-        contentValues.put("NAME", name);
         contentValues.put("WEIGHT", weight);
         contentValues.put("HEIGHT", height);
         contentValues.put("AGE", age);
@@ -198,7 +217,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("KIN_NAME", kinname);
         contentValues.put("KIN_EMAIL", kinemail);
         contentValues.put("VISIT_DATE", visitdate);
-        db.update(TABLE_NAME_PERSONAL_INFO, contentValues, "USERNAME = ?", new String[] {username} );
+        contentValues.put("User_ID", currentUserID);
+        cursor.close();
+        db.update(TABLE_NAME_PERSONAL_INFO, contentValues, "User_ID = ?", new String[] {String.valueOf(currentUserID)} );
         return true;
     }
 }
