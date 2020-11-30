@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="675dp"
-        android:background="?attr/colorPrimary"
+        android:background="#FF5722"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="@string/settings"
-        android:textColor="#F40000"
+        android:textColor="#FBFAFA"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar_settings"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,8 +48,9 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#EDBEB0"
         tools:layout_editor_absoluteX="116dp"
-        android:layout_marginTop="55dp">
+        tools:layout_editor_absoluteY="55dp">
 
         <TableRow
             android:layout_width="match_parent"
@@ -62,7 +63,7 @@
                 android:layout_gravity="center_vertical"
                 android:text="@string/log_out"
                 android:textSize="24sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <ImageButton
                 android:id="@+id/imageButton_logOut"

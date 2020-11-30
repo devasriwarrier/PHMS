@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EDBEB0"
     android:fitsSystemWindows="true"
     tools:context=".ViewMedicationActivity">
 
@@ -11,9 +12,10 @@
         android:id="@+id/toolbar_medicationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="#FF5722"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"/>
+        android:theme="?attr/actionBarTheme" />
+
     <ImageView
         android:id="@+id/imageView_backButtonMedicationView"
         android:layout_width="53dp"
@@ -35,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="@string/medications"
-        android:textColor="#F40000"
+        android:textColor="#FBFAFA"
         android:textSize="36sp" />
 
     <ListView
@@ -48,8 +50,8 @@
         android:id="@+id/floatingActionButton_AddMedication"
         android:layout_width="wrap_content"
         android:layout_height="68dp"
-        android:clickable="true"
         android:layout_gravity="bottom|right"
+        android:clickable="true"
         android:contentDescription="@string/addmedicationbutton"
         android:focusable="true"
         app:srcCompat="@android:drawable/ic_menu_add" />

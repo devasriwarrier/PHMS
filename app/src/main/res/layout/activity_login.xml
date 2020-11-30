@@ -4,14 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EDBEB0"
     tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="340dp"
+        android:layout_height="164dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/m_health"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.688"
+        app:srcCompat="@drawable/m_health_512" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="29dp"
-        android:background="?attr/colorPrimary"
+        android:background="#FF5722"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toTopOf="@+id/username"
@@ -27,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="@string/myhealthpal"
-        android:textColor="#F40000"
+        android:textColor="#FAF8F8"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/username"
         app:layout_constraintEnd_toEndOf="@+id/toolbar_Login"
@@ -48,8 +63,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.12"
-        />
+        app:layout_constraintVertical_bias="0.12" />
 
     <EditText
         android:id="@+id/password"
@@ -69,26 +83,14 @@
         android:id="@+id/login"
         android:layout_width="417dp"
         android:layout_height="51dp"
-        android:layout_marginTop="0dp"
         android:layout_marginBottom="400dp"
         android:text="@string/logbutton"
+        app:backgroundTint="#F44336"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
         tools:ignore="HardcodedText" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="239dp"
-        android:layout_height="350dp"
-        android:contentDescription="@string/todo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/login"
-        app:layout_constraintVertical_bias="0.957"
-        app:srcCompat="@drawable/stethescope" />
 
     <TextView
         android:id="@+id/register"
