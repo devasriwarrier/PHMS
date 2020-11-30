@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/PersonalInfoUpdate_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EDBEB0"
+        android:focusable="auto"
+        tools:context=".PersonalInfoActivity">
+
+        <EditText
+            android:id="@+id/mTextAge"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="@string/edit_age"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTextHeight"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/mTextName"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="@string/edit_name"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTextUserName"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/mTextGender"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="@string/edit_gender"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTextName"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/mTextWeight"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="@string/edit_weight"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTextGender"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/mTextHeight"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="@string/edit_height"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTextWeight"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/mTextdocName"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="@string/edit_docName"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTextAge"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/mTextdocEmail"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="@string/edit_docEmail"
+            android:inputType="textEmailAddress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTextdocName"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/mTextpharmName"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="@string/edit_pharmName"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTextdocEmail"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/mTextpharmEmail"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="@string/edit_pharmEmail"
+            android:inputType="textEmailAddress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTextpharmName"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/mTextkinName"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="@string/edit_NofKin"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTextpharmEmail"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/mTextkinEmail"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="@string/edit_NofKinEmail"
+            android:inputType="textEmailAddress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTextkinName"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/mTextvisitDate"
+            android:layout_width="279dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="10dp"
+            android:ems="7"
+            android:hint="@string/edit_visitDate"
+            android:inputType="date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTextkinEmail"
+            android:importantForAutofill="no" />
+
+        <Button
+            android:id="@+id/mButtonPersonalInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/PersonalInfo_button"
+            app:backgroundTint="#F69273"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTextvisitDate" />
+
+        <Button
+            android:id="@+id/mButtonUpdatePersonalInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/PersonalInfoUpdate_button"
+            app:backgroundTint="#F69273"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toEndOf="@+id/mButtonPersonalInfo"
+            app:layout_constraintTop_toBottomOf="@+id/mTextvisitDate" />
+
+        <EditText
+            android:id="@+id/mTextUserName"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:fontFamily="sans-serif"
+            android:hint="@string/edit_username"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            android:importantForAutofill="no" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="321dp"
+            android:layout_height="116dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/m_health"
+            app:layout_constraintBottom_toTopOf="@+id/mTextUserName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/m_health_512" />
+
+        <Button
+            android:id="@+id/mButtonValidatePersonalInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/view"
+            app:backgroundTint="#F69273"
+            app:layout_constraintEnd_toStartOf="@+id/mButtonPersonalInfo"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTextvisitDate" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -9,7 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginRegistration">
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".PersonalInfoActivity" />
+        <activity
+            android:name=".ViewMedicationActivity"
+            android:label="@string/title_activity_view_medication"
+            android:theme="@style/Theme.LoginRegistration.NoActionBar" />
+        <activity android:name=".MedicationActivity" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.LoginRegistration.NoActionBar" />
+        <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
