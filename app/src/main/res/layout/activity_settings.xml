@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#EDBEB0"
     android:layout_height="match_parent"
     tools:context=".SettingsActivity">
 
@@ -48,9 +49,8 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#EDBEB0"
         tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="55dp">
+        android:layout_marginTop="100dp">
 
         <TableRow
             android:layout_width="match_parent"
@@ -63,14 +63,36 @@
                 android:layout_gravity="center_vertical"
                 android:text="@string/log_out"
                 android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
-            <ImageButton
-                android:id="@+id/imageButton_logOut"
+            <ImageView
+                android:id="@+id/imageView_logOut"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="@string/logoutbutton"
+                app:srcCompat="@android:drawable/ic_lock_power_off" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/textView_ChangePassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/logoutbutton"
-                app:srcCompat="@drawable/logout" />
+                android:layout_gravity="center_vertical"
+                android:text="@string/change_password"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/imageView_changePassword"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="@string/changepasswordbutton"
+                app:srcCompat="@android:drawable/ic_lock_lock" />
         </TableRow>
 
     </TableLayout>

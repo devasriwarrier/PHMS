@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity<textView> extends AppCompatActivity {
     private EditText mTextUsername;
     private EditText mTextPassword;
     private DatabaseHelper db;
@@ -32,10 +32,16 @@ public class LoginActivity extends AppCompatActivity {
         mTextPassword = (EditText) findViewById(R.id.password);
         Button mButtonLogin = (Button) findViewById(R.id.login);
         TextView mTextViewRegister = (TextView) findViewById(R.id.register);
+        TextView mTextViewForgotPassword = (TextView) findViewById(R.id.textView_forgotPassword);
 
         mTextViewRegister.setOnClickListener(view -> {
             Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(registerIntent);
+        });
+
+        mTextViewForgotPassword.setOnClickListener(v -> {
+            Intent loginToForgotPassword = new Intent(LoginActivity.this,ForgotPasswordActivity.class);
+            startActivity(loginToForgotPassword);
         });
 
         mButtonLogin.setOnClickListener(view -> {

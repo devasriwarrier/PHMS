@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginRegistration">
-        <activity android:name=".MonitoringSystemActivity"></activity>
+        <activity android:name=".ChangePasswordActivity"></activity>
+        <activity android:name=".ResetPasswordActivity" />
+        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".MonitoringSystemActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".PersonalInfoActivity" />
         <activity
@@ -29,7 +32,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name=".MedicationNotifications"/>
+
+        <receiver android:name=".MedicationNotifications" />
     </application>
 
 </manifest>

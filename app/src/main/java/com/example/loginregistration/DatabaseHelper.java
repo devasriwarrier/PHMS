@@ -104,6 +104,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count > 0;
     }
 
+    public boolean checkUserEmailExists(String username, String email){
+        SQLiteDatabase db = getReadableDatabase();
+
+        String[] columns = {COL_1};
+        String selection = COL_2 + "=?" + " and " + COL_5 + "=?";
+        String[] selectionArgs = {username, email};
+
+        Cursor cursor = db.query(USER_INFO, columns, selection, selectionArgs, null, null, null);
+        System.out.println("Printing cursor  " + cursor);
+        int count = cursor.getCount();
+        cursor.close();
+        db.close();
+
+        return count > 0;
+
+
+    }
+
     public boolean addMedication(String medName, String timeToTake, String howMuch, String howLong) {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -144,6 +162,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = read.query(MEDICATION, columns, selection, loggedIn, null, null, null);
         cursor.moveToFirst();
         return cursor;
+    }
+
+    public boolean updatePassword(String username, String email, String password){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String selection = COL_2 + "=?" + " and " + COL_5 + "=?";
+        String[] selectionArgs = {username, email};
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_3, password);
+        long res = db.update(USER_INFO, contentValues, selection, selectionArgs);
+
+        return res > 0;
     }
 
     public boolean addPersonalInfo(String weight, String height, String age, String gender, String docname, String docemail, String pharmname, String pharmemail, String kinname, String kinemail, String visitdate){

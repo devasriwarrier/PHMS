@@ -27,7 +27,7 @@ public class MonitoringSystemActivity extends AppCompatActivity {
         ImageView mImageViewBackMonitoringSystem = (ImageView) findViewById(R.id.mImageViewBackMonitoringSystem);
         mImageViewBackMonitoringSystem.setOnClickListener(view -> {
             Intent MonViewToHome = new Intent( MonitoringSystemActivity.this, HomeActivity.class);
-            //startActivity(MedViewToHome);
+            startActivity(MonViewToHome);
         });
 
 
