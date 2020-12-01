@@ -4,8 +4,11 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -14,6 +17,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.util.Calendar;
 
 public class MedicationActivity extends AppCompatActivity {
     private DatabaseHelper db;
@@ -61,7 +66,6 @@ public class MedicationActivity extends AppCompatActivity {
             String timeToTake = mTextTime.getText().toString().trim();
             String dosage = mTextDosage.getText().toString().trim();
             String howLong = mTextHowLong.getText().toString().trim();
-
 
             if (TextUtils.isEmpty(med)) {
                 mTextMedication.setError("Medication name required!");

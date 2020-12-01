@@ -163,4 +163,5 @@
     <string name="backbuttonsettings">backbuttonSettings</string>
     <string name="log_out">Log Out</string>
     <string name="logoutbutton">logOutButton</string>
+    <string name="button">Button</string>
 </resources>
