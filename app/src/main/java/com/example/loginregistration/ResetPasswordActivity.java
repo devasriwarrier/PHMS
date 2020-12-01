@@ -38,9 +38,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
             String confirmPassword = mEditTextRePasswordReset.getText().toString();
             if (password.equals(confirmPassword)) {
 
-                boolean checkPasswordUpdate = db.updatePassword(username, email, password);
-
-                if (checkPasswordUpdate) {
+                if (db.updatePassword(username, email, password)) {
                     Intent ResetPasswordToLogin = new Intent(ResetPasswordActivity.this, LoginActivity.class);
                     startActivity(ResetPasswordToLogin);
                     Toast.makeText(ResetPasswordActivity.this,"Password Updated Successfully", Toast.LENGTH_SHORT).show();

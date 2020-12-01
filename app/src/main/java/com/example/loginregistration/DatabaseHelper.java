@@ -21,11 +21,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_2 = "Username";
     public static final String COL_3 = "Password";
     public static final String COL_4 = "Name";
-    public static final String COL_5 = "Email"; //TODO: Jason remember to handle this
-    public static final String COL_6 = "Address"; //TODO: Jason remember to handle this
-    public static final String COL_7 = "Phone"; //TODO: Jason remember to handle this
-    public static final String COL_8 = "Security_Question"; //TODO: Jason remember to handle this
-    public static final String COL_9 = "Security_Answer"; //TODO: Jason remember to handle this
+    public static final String COL_5 = "Email";
+    public static final String COL_6 = "Address";
+    public static final String COL_7 = "Phone";
+    public static final String COL_8 = "Security_Question";
+    public static final String COL_9 = "Security_Answer";
     public static final String MEDICATION = "medication";
     public static final String COL_10 = "Medication_ID";
     public static final String COL_11 = "Medication_Name";
@@ -33,23 +33,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_13 = "How_Much";
     public static final String COL_14 = "How_Long";
     public static final String COL_15 = "User_ID";
-    public static final String TABLE_NAME_PERSONAL_INFO = "personalInfo";
+    public static final String TABLE_NAME_PERSONAL_INFO = "personalInfo"; // TODO: Devasri
     public static final String COL_16 = "ID"; //all columns in DB
-    public static final String COL_17 = "WEIGHT"; //TODO: Devasri remember to handle this in Monitoring System
+    public static final String COL_17 = "WEIGHT";
     public static final String COL_18 = "HEIGHT";
     public static final String COL_19 = "AGE";
     public static final String COL_20 = "GENDER";
-    public static final String COL_21 = "DOCTOR_NAME"; //TODO: Devasri remember to handle this in Monitoring System
-    public static final String COL_22 = "DOCTOR_EMAIL"; //TODO: Devasri remember to handle this in Monitoring System
+    public static final String COL_21 = "DOCTOR_NAME";
+    public static final String COL_22 = "DOCTOR_EMAIL";
     public static final String COL_23 = "PHARM_NAME";
     public static final String COL_24 = "PHARM_EMAIL";
     public static final String COL_25 = "KIN_NAME";
     public static final String COL_26 = "KIN_EMAIL";
     public static final String COL_27 = "VISIT_DATE";
     public static final String COL_28 = "User_ID";
-    public static String currentUser = "";
-    public static int currentUserID = -1;
-    //TODO: Might need to add variables for "diet"
+    protected static String currentUser = "";
+    protected static int currentUserID = -1;
+    protected static String currentUserEmail = "";
 
     public DatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -118,8 +118,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
 
         return count > 0;
-
-
     }
 
     public boolean addMedication(String medName, String timeToTake, String howMuch, String howLong) {
@@ -139,7 +137,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return res != -1;
     }
 
-    public void setCurrentUserID(String user){
+    protected void setCurrentUserID(String user){
         SQLiteDatabase read = getReadableDatabase();
 
         String[] columns = {COL_1};
@@ -150,6 +148,37 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.moveToFirst();
         currentUserID = cursor.getInt(0);
         cursor.close();
+    }
+
+    protected void setCurrentUserEmail(){
+        SQLiteDatabase read = getReadableDatabase();
+
+        String[] columns = {COL_5};
+        String selection = COL_1 + "=?" + " and " + COL_2 + "=?";
+        String[] selectionArgs = {String.valueOf(currentUserID), currentUser};
+
+        Cursor cursor = read.query(USER_INFO, columns, selection, selectionArgs, null, null, null);
+        cursor.moveToFirst();
+        currentUserEmail = cursor.getString(0);
+        System.out.println("Current User Email: " + currentUserEmail);
+        cursor.close();
+    }
+
+    public boolean checkPasswordsMatch(String password){
+        System.out.println(password);
+        SQLiteDatabase read = getReadableDatabase();
+
+        String[] columns = {COL_3};
+        String selection = COL_1 + "=?" + " and " + COL_2 + "=?";
+        String[] selectionArgs = {String.valueOf(currentUserID), currentUser};
+
+        Cursor cursor = read.query(USER_INFO, columns, selection, selectionArgs, null, null, null);
+
+        cursor.moveToFirst();
+        String currentPassword = cursor.getString(0);
+        cursor.close();
+        System.out.println("Current password: " + currentPassword);
+        return currentPassword.equals(password);
     }
 
     public Cursor viewMedication(){

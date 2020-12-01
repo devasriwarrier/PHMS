@@ -52,6 +52,7 @@ public class LoginActivity<textView> extends AppCompatActivity {
                 Intent HomePage = new Intent(LoginActivity.this, HomeActivity.class);
                 DatabaseHelper.currentUser = user;
                 db.setCurrentUserID(user);
+                db.setCurrentUserEmail();
                 startActivity(HomePage);
             } else {
                 Toast.makeText(LoginActivity.this, "Login Error", Toast.LENGTH_SHORT).show();
