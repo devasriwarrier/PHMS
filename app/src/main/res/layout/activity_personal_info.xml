@@ -14,6 +14,21 @@
         android:focusable="auto"
         tools:context=".PersonalInfoActivity">
 
+        <ImageView
+            android:id="@+id/mImageViewBackPersonalInfo"
+            android:layout_width="53dp"
+            android:layout_height="58dp"
+            android:layout_marginEnd="358dp"
+            android:layout_marginRight="358dp"
+            android:layout_marginBottom="42dp"
+            android:contentDescription="@string/backbutton"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/abc_vector_test" />
+
         <EditText
             android:id="@+id/mTextAge"
             android:layout_width="280dp"

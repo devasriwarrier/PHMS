@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EDBEB0"
     android:fitsSystemWindows="true"
     tools:context=".MedicationActivity">
 
@@ -11,7 +12,7 @@
         android:id="@+id/toolbar_Medication"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="#FF5722"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
@@ -26,7 +27,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="@string/add_medication"
-        android:textColor="#F40000"
+        android:textColor="#F6F4F4"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,6 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="100dp"
+        android:background="#EDBEB0"
         android:gravity="clip_horizontal|center_horizontal"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="-115dp">
@@ -52,22 +54,22 @@
                 android:id="@+id/textView_Medication"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
                 android:gravity="center"
                 android:text="@string/medication"
-                android:textStyle="bold"
-                android:layout_marginStart="10dp" />
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editText_Medication"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
                 android:ems="10"
                 android:hint="@string/medication_name"
                 android:importantForAutofill="no"
-                android:inputType="text"
-                android:layout_marginStart="10dp" />
+                android:inputType="text" />
         </TableRow>
 
         <TableRow
@@ -78,21 +80,21 @@
                 android:id="@+id/textView_Time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
                 android:text="@string/time_to_take"
-                android:textStyle="bold"
-                android:layout_marginStart="10dp" />
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
                 android:ems="10"
                 android:hint="@string/time_of_day_to_take"
                 android:importantForAutofill="no"
-                android:inputType="time"
-                android:layout_marginStart="10dp" />
+                android:inputType="time" />
         </TableRow>
 
         <TableRow
@@ -103,22 +105,22 @@
                 android:id="@+id/textView_Dosage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
                 android:gravity="center"
                 android:text="@string/dosage"
-                android:textStyle="bold"
-                android:layout_marginStart="10dp" />
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editText_Dosage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
                 android:ems="10"
                 android:hint="@string/how_much_to_take"
                 android:importantForAutofill="no"
-                android:inputType="text"
-                android:layout_marginStart="10dp" />
+                android:inputType="text" />
         </TableRow>
 
         <TableRow
@@ -129,22 +131,22 @@
                 android:id="@+id/textView_HowLong"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
                 android:gravity="center"
                 android:text="@string/how_long"
-                android:textStyle="bold"
-                android:layout_marginStart="10dp" />
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editText_HowLong"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
                 android:ems="10"
                 android:hint="@string/how_many_days"
                 android:importantForAutofill="no"
-                android:inputType="text"
-                android:layout_marginStart="10dp" />
+                android:inputType="text" />
         </TableRow>
     </TableLayout>
 
@@ -155,6 +157,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="30dp"
         android:text="@string/view"
+        app:backgroundTint="#FF5722"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_SubmitMedication"
         app:layout_constraintHorizontal_bias="0.71"
@@ -172,6 +175,7 @@
         android:layout_marginRight="163dp"
         android:layout_marginBottom="30dp"
         android:text="@string/submit"
+        app:backgroundTint="#FF5722"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tableLayout"

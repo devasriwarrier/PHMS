@@ -2,10 +2,13 @@ package com.example.loginregistration;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.Toast;
 import android.view.View;
 import android.widget.Button;
@@ -28,12 +31,19 @@ public class PersonalInfoActivity extends AppCompatActivity {
     Button mButtonPersonalInfo;
     Button mButtonUpdatePersonalInfo;
     Button mButtonValidatePersonalInfo;
+    Button mImageViewBackPersonalInfo;
 
     DatabaseHelper myDb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_info);
+
+        ImageView mImageViewBackPersonalInfo = (ImageView) findViewById(R.id.mImageViewBackPersonalInfo);
+        mImageViewBackPersonalInfo.setOnClickListener(view -> {
+            Intent MedViewToHome = new Intent( PersonalInfoActivity.this, HomeActivity.class);
+            //startActivity(MedViewToHome);
+        });
 
         myDb = new DatabaseHelper(this);
 
@@ -51,6 +61,7 @@ public class PersonalInfoActivity extends AppCompatActivity {
         mButtonPersonalInfo = (Button) findViewById(R.id.mButtonPersonalInfo);
         mButtonUpdatePersonalInfo = (Button) findViewById(R.id.mButtonUpdatePersonalInfo);
         mButtonValidatePersonalInfo = (Button)findViewById(R.id.mButtonValidatePersonalInfo);
+
         AddPersonalData();
         ViewPersonalData();
         UpdatePersonalData();
@@ -101,17 +112,17 @@ public class PersonalInfoActivity extends AppCompatActivity {
                         while(result.moveToNext()) {
                             //buffer.append("ID: "+ result.getString(0)+"\n");
 
-                            buffer.append("Weight: "+ result.getString(3)+"\n");
-                            buffer.append("Height: "+ result.getString(4)+"\n");
-                            buffer.append("Age: "+ result.getString(5)+"\n");
-                            buffer.append("Gender: "+ result.getString(6)+"\n");
-                            buffer.append("Doctor Name: "+ result.getString(7)+"\n");
-                            buffer.append("Doctor Email: "+ result.getString(8)+"\n");
-                            buffer.append("Pharmacist Name: "+ result.getString(9)+"\n");
-                            buffer.append("Pharmacist Email: "+ result.getString(10)+"\n");
-                            buffer.append("Next of Kin Name: "+ result.getString(11)+"\n");
-                            buffer.append("Next of Kin Email: "+ result.getString(12)+"\n");
-                            buffer.append("Visit Date: "+ result.getString(13)+"\n\n");
+                            buffer.append("Weight: "+ result.getString(1)+"\n");
+                            buffer.append("Height: "+ result.getString(2)+"\n");
+                            buffer.append("Age: "+ result.getString(3)+"\n");
+                            buffer.append("Gender: "+ result.getString(4)+"\n");
+                            buffer.append("Doctor Name: "+ result.getString(5)+"\n");
+                            buffer.append("Doctor Email: "+ result.getString(6)+"\n");
+                            buffer.append("Pharmacist Name: "+ result.getString(7)+"\n");
+                            buffer.append("Pharmacist Email: "+ result.getString(8)+"\n");
+                            buffer.append("Next of Kin Name: "+ result.getString(9)+"\n");
+                            buffer.append("Next of Kin Email: "+ result.getString(10)+"\n");
+                            buffer.append("Visit Date: "+ result.getString(11)+"\n\n");
                         }
                         //show all data
                         showMessage("Data", buffer.toString());

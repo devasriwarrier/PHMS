@@ -5,16 +5,17 @@
     android:id="@+id/bRegister"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#EDBEB0"
     tools:context=".RegisterActivity">
 
     <EditText
         android:id="@+id/edittext_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:autofillHints=""
         android:hint="@string/nameFirstLast"
         android:inputType="textPersonName"
-        android:layout_marginTop="50dp"
         app:layout_constraintBottom_toTopOf="@+id/edittext_address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -27,6 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edittext_name"
+        android:autofillHints=""
         android:hint="Enter E-mail address"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/edittext_address"
@@ -34,8 +36,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edittext_name"
-        tools:ignore="HardcodedText"
-        android:autofillHints="" />
+        tools:ignore="HardcodedText" />
 
     <EditText
         android:id="@+id/edittext_address"
@@ -43,66 +44,66 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/edittext_email"
 
+        android:autofillHints=""
         android:hint="Enter Home Address"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/edittext_phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edittext_email"
-        tools:ignore="HardcodedText"
-        android:autofillHints="" />
+        tools:ignore="HardcodedText" />
 
     <EditText
         android:id="@+id/edittext_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edittext_address"
+        android:autofillHints=""
         android:hint="@string/phoneNumber"
         android:inputType="phone"
         app:layout_constraintBottom_toTopOf="@+id/edittext_username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edittext_address"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/edittext_address" />
 
     <EditText
         android:id="@+id/edittext_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edittext_phone"
+        android:autofillHints=""
         android:hint="@string/enterUsername"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/edittext_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edittext_phone"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/edittext_phone" />
 
     <EditText
         android:id="@+id/edittext_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edittext_username"
+        android:autofillHints=""
         android:hint="@string/enterPassword"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/edittext_rePassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edittext_username"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/edittext_username" />
 
     <EditText
         android:id="@+id/edittext_rePassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edittext_password"
+        android:autofillHints=""
         android:hint="@string/confirmPassword"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/edittext_securityQuestion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edittext_password"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/edittext_password" />
 
     <EditText
         android:id="@+id/edittext_securityQuestion"
@@ -110,12 +111,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/edittext_rePassword"
         android:hint="@string/enterSecurityQ"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/edittext_securityAnswer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edittext_rePassword"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/edittext_rePassword" />
 
     <EditText
         android:id="@+id/edittext_securityAnswer"
@@ -141,8 +142,9 @@
         android:layout_marginEnd="163dp"
         android:layout_marginRight="163dp"
         android:layout_marginBottom="30dp"
-        android:textColor="@android:color/white"
         android:text="@string/registerButton"
+        android:textColor="@android:color/white"
+        app:backgroundTint="#FF5722"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.166"
