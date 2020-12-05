@@ -41,8 +41,8 @@ public class PersonalInfoActivity extends AppCompatActivity {
 
         ImageView mImageViewBackPersonalInfo = (ImageView) findViewById(R.id.mImageViewBackPersonalInfo);
         mImageViewBackPersonalInfo.setOnClickListener(view -> {
-            Intent MedViewToHome = new Intent( PersonalInfoActivity.this, HomeActivity.class);
-            //startActivity(MedViewToHome);
+            Intent PersonalViewToHome = new Intent( PersonalInfoActivity.this, HomeActivity.class);
+            startActivity(PersonalViewToHome);
         });
 
         myDb = new DatabaseHelper(this);
@@ -125,7 +125,7 @@ public class PersonalInfoActivity extends AppCompatActivity {
                             buffer.append("Visit Date: "+ result.getString(11)+"\n\n");
                         }
                         //show all data
-                        showMessage("Data", buffer.toString());
+                        showMessage("Saved Personal Information", buffer.toString());
                     }
                 }
         );

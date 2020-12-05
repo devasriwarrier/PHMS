@@ -25,6 +25,12 @@ public class HomeActivity extends AppCompatActivity {
         ImageButton mButtonPersonalInfo = (ImageButton) findViewById(R.id.imageButton_PersonalInfo);
         ImageButton mButtonMedication = (ImageButton) findViewById(R.id.imageButton_Medicine);
         ImageButton mButtonSettings = (ImageButton) findViewById(R.id.imageButton_Settings);
+        ImageButton mButtonMonitoringSystem = (ImageButton) findViewById(R.id.mButtonMonitoringSystem);
+
+        mButtonMonitoringSystem.setOnClickListener(view -> {
+            Intent monitoringSystemIntent = new Intent(HomeActivity.this, MonitoringSystemActivity.class);
+            startActivity(monitoringSystemIntent);
+        });
 
         mButtonMedication.setOnClickListener(view -> {
             Intent medicationIntent = new Intent(HomeActivity.this, ViewMedicationActivity.class);

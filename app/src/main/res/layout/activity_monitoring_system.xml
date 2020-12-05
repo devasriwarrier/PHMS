@@ -49,122 +49,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="181dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="88dp"
-        android:background="#FF5722"
-        android:text="Message Doctor/Pharmacist"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="178dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="60dp"
-        android:background="#FF5722"
-        android:text="Notes and Reminders"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewsendMessage" />
-
-    <TextView
-        android:id="@+id/textViewsendMessage"
-        android:layout_width="178dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="72dp"
-        android:background="#FF5722"
-        android:text="View Previous Times"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewtimeTaken" />
-
-    <Button
-        android:id="@+id/mButtonMedView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginTop="68dp"
-        android:text="View"
-        app:layout_constraintStart_toEndOf="@+id/textViewsendMessage"
-        app:layout_constraintTop_toBottomOf="@+id/mEditTextTimeTaken" />
-
-    <EditText
-        android:id="@+id/mEditTextTimeTaken"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="224dp"
-        android:ems="10"
-        android:inputType="time"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.736"
-        app:layout_constraintStart_toEndOf="@+id/textViewtimeTaken"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewtimeTaken"
-        android:layout_width="178dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="52dp"
-        android:background="#FF5722"
-        android:text="Time Taken?"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewmedicationTaken" />
-
-    <EditText
-        android:id="@+id/mEditTextmessage"
-        android:layout_width="214dp"
-        android:layout_height="92dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/mEditTextnotes" />
-
-    <EditText
-        android:id="@+id/mEditTextnotes"
-        android:layout_width="212dp"
-        android:layout_height="87dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="52dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/mButtonMedView" />
-
-    <Button
-        android:id="@+id/mButtonMedSend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="68dp"
-        android:layout_marginRight="68dp"
-        android:text="Send"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mEditTextmessage" />
-
     <Button
         android:id="@+id/mButtonMedYes"
         android:layout_width="wrap_content"
@@ -173,6 +57,7 @@
         android:layout_marginLeft="28dp"
         android:layout_marginTop="136dp"
         android:text="Yes"
+        app:backgroundTint="#FF5722"
         app:layout_constraintStart_toEndOf="@+id/textViewmedicationTaken"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -182,6 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="136dp"
         android:text="No"
+        app:backgroundTint="#FF5722"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toEndOf="@+id/mButtonMedYes"
@@ -209,5 +95,17 @@
         app:layout_constraintTop_toBottomOf="@+id/Monitor_label"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/m_health_512" />
+
+    <Button
+        android:id="@+id/btnSetNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="176dp"
+        android:text="Set Notification"
+        app:backgroundTint="#FF5722"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -58,7 +58,7 @@
                 app:srcCompat="@drawable/medicine" />
 
             <ImageButton
-                android:id="@+id/imageButton_MonitoringSystem"
+                android:id="@+id/mButtonMonitoringSystem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/monitoring_systemHome"

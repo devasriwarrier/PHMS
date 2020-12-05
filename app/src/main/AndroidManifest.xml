@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.loginregistration">
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,13 +12,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginRegistration">
-        <activity android:name=".MonitoringSystemActivity"></activity>
+        <activity android:name=".NotificationActivity" />
+        <activity android:name=".MonitoringSystemActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".PersonalInfoActivity" />
         <activity
             android:name=".ViewMedicationActivity"
             android:label="@string/title_activity_view_medication"
             android:theme="@style/Theme.LoginRegistration.NoActionBar" />
+
+        <receiver android:name="com.allyants.notifyme.NotificationPublisher" />
+        <receiver android:name="com.allyants.notifyme.BootNotifyMe">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
+
         <activity android:name=".MedicationActivity" />
         <activity
             android:name=".HomeActivity"

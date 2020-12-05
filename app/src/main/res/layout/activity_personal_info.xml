@@ -43,30 +43,18 @@
             android:importantForAutofill="no" />
 
         <EditText
-            android:id="@+id/mTextName"
-            android:layout_width="280dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="10dp"
-            android:ems="10"
-            android:hint="@string/edit_name"
-            android:inputType="textPersonName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mTextUserName"
-            android:importantForAutofill="no" />
-
-        <EditText
             android:id="@+id/mTextGender"
             android:layout_width="280dp"
             android:layout_height="40dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="28dp"
             android:ems="10"
             android:hint="@string/edit_gender"
+            android:importantForAutofill="no"
             android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.458"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mTextName"
-            android:importantForAutofill="no" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <EditText
             android:id="@+id/mTextWeight"
@@ -166,11 +154,11 @@
             android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
             android:ems="10"
-            android:hint="@string/edit_NofKinEmail"
+            android:hint="Next of Kin Phone #?"
+            android:importantForAutofill="no"
             android:inputType="textEmailAddress"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mTextkinName"
-            android:importantForAutofill="no" />
+            app:layout_constraintTop_toBottomOf="@+id/mTextkinName" />
 
         <EditText
             android:id="@+id/mTextvisitDate"
@@ -209,30 +197,11 @@
             app:layout_constraintStart_toEndOf="@+id/mButtonPersonalInfo"
             app:layout_constraintTop_toBottomOf="@+id/mTextvisitDate" />
 
-        <EditText
-            android:id="@+id/mTextUserName"
-            android:layout_width="280dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:fontFamily="sans-serif"
-            android:hint="@string/edit_username"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
-            android:importantForAutofill="no" />
-
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="321dp"
             android:layout_height="116dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
             android:contentDescription="@string/m_health"
-            app:layout_constraintBottom_toTopOf="@+id/mTextUserName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
