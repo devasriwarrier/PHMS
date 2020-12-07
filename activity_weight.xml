@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDBEB0"
+    tools:context=".WeightActivity">
+
+    <EditText
+        android:id="@+id/mTextWeight"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="300dp"
+        android:ems="10"
+        android:hint="@string/edit_weight"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/mButtonUpdatePersonalInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="400dp"
+        android:hint="@string/PersonalInfoUpdate_button"
+        app:backgroundTint="#F69273"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="234dp"
+        android:layout_height="161dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="50dp"
+        app:srcCompat="@drawable/m_health_512"
+        android:contentDescription="TODO" />
+
+</RelativeLayout>
