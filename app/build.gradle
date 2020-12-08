@@ -9,7 +9,7 @@ android {
     defaultConfig {
         applicationId "com.example.loginregistration"
         minSdkVersion 16
-        targetSdkVersion 22
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -35,12 +35,8 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
     testImplementation 'junit:junit:4.+'
-
-   // implementation 'com.github.User:Repo:Tag'
     implementation 'com.github.jakebonk:NotifyMe:1.0.0'
     implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
-
-
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 

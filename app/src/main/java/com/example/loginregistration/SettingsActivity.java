@@ -18,16 +18,23 @@ public class SettingsActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        ImageButton mImageButtonLogOut = (ImageButton) findViewById(R.id.imageButton_logOut);
+        ImageView mImageViewChangePassword = findViewById(R.id.imageView_changePassword);
 
-        mImageButtonLogOut.setOnClickListener(v -> {
+        mImageViewChangePassword.setOnClickListener(v -> {
+            Intent SettingsToChangePassword = new Intent(SettingsActivity.this, ChangePasswordActivity.class);
+            startActivity(SettingsToChangePassword);
+        });
+
+        ImageView mImageViewLogOut = findViewById(R.id.imageView_logOut);
+
+        mImageViewLogOut.setOnClickListener(v -> {
             Intent settingsLogOut = new Intent(SettingsActivity.this, LoginActivity.class);
             DatabaseHelper.currentUserID = -1;
             DatabaseHelper.currentUser = "";
             startActivity(settingsLogOut);
         });
 
-        ImageView mImageViewBackButton = (ImageView) findViewById(R.id.imageView_backButtonSettings);
+        ImageView mImageViewBackButton = findViewById(R.id.imageView_backButtonSettings);
 
         mImageViewBackButton.setOnClickListener(v -> {
             Intent settingsToHome = new Intent(SettingsActivity.this, HomeActivity.class);
